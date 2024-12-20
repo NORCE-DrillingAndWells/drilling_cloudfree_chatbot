@@ -1,0 +1,9 @@
+export CUDA_VISIBLE_DEVICES='0'
+python -m tevatron.driver.encode \
+  --output_dir=temp \
+  --model_name_or_path ft_models_v2/6config \
+  --fp16 \
+  --per_device_eval_batch_size 156 \
+  --p_max_len 512 \
+  --encode_in_path data_to_encode_v2/raw_passage_id_to_passage_for_embedding.jsonl \
+  --encoded_save_path results_v2/6passages_emb.pkl
