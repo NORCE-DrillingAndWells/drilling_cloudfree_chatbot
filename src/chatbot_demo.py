@@ -1,28 +1,43 @@
 import os, sys
+# , ollama
 import requests, json
 import retriever
+import time
+
+TOP_RETRIEVALS_TO_USE = 5
 
 current_file_path = os.path.abspath(__file__)
 current_folder = os.path.dirname(current_file_path)
 sys.path.append(current_folder + "/..")
 
+Test_Query = "Where was the well 2/6-3 targeting?"
+
 
 def generate_prompt(query: str, index_passage_pair: dict, topX: int) -> str:
     context = retriever.get_context(query, topX, index_passage_pair)
-    prompt = f"Question: {query}. Answer the question based solely on the provided context. Note that not all the context is related to the question. Do not include any explanation or additional information. Context: {context}"
-    return prompt
+    prompt = (f"Question: {query}. "
+              f"Answer the question **directly to the best of your ability** based solely on the provided context. "
+              f"Note that not all the context is related to the question. "
+              f"Do not include any explanation or additional information. "
+              f""
+              f"Context: {context}")
+    return prompt, context
 
 
-def ask_LLM_ollama(prompt: str, cleanAnswer: bool = False) -> str:
+def ask_LLM_ollama(prompt: str, cleanAnswer: bool = False, fixedSeed = False) -> str:
     # Define the URL and the data payload
-    # url = "http://10.64.105.44:11434/api/generate"
     url = "http://localhost:11434/api/generate"
     data = {
-        "model": "llama3.1",
+        "model": "llama3.3",
         "prompt": prompt,
-        "stream": False,
+        "stream": False
         # "format": "json",
     }
+    if fixedSeed:
+        data['options'] = {
+            "seed": 0,
+            "temperature": 0
+        }
 
     # Send the POST request
     response = requests.post(url, headers={"Content-Type": "application/json"}, data=json.dumps(data))
@@ -65,21 +80,41 @@ def ask_LLM_openai(prompt: str, cleanAnswer: bool = False) -> str:
 
 def test():
     query_list = [
+        "When was well 16/10-5 abandoned?",
+        "When was well 6204/10-2R abandoned?",
+        "When was well 1/2-1 drilled in Norway?",
+        "Where was the well 2/6-3 targeting?",
+        "What was the objective of the well 32/4-2?",
+        "What was the CO2 storage potential discovered by 32/4-2?",
+        "What was the CO2 storage potential discovered by 32/4-3S?",
+        "Which reservoir is the well 33/2-1 drilled into?",
+        "Which geology types were observed in well 6201/11-3R?",
+        "Which wells targeted Late and Middle Jurassic sandstones?",
         "What was the primary objective of well 34/6-3 A?",
         "What were the primary and secondary objectives of well 30/7-8 R?",
         "What is the source of information for the well named 7/11-14A?",
         "What were the results of the drill stem test DST 3 in the Ekofisk Formation?",
         "What was the main purpose of drilling well 16/2-21?",
     ]
-    query_str = query_list[1]
+
     with open(current_folder + "/index_passage_pair.json", "r") as file:
         index_passage_pair = json.load(file)
     # prompt = generate_prompt(query_str, index_passage_pair, 3)
     # print("Prompt:\n", prompt + "\n")
     # ask_LLM_openai(prompt)
-    prompt = generate_prompt(query_str, index_passage_pair, 3)
-    print("Prompt:\n", prompt + "\n")
-    ask_LLM_ollama(prompt)
+    for i in range(len(query_list)):
+        query_str = query_list[i]
+
+        prompt, context = generate_prompt(query_str, index_passage_pair, TOP_RETRIEVALS_TO_USE)
+        print("Prompt:\n", prompt + "\n")
+
+
+        start_time = time.time()  # Record start time
+        ask_LLM_ollama(prompt, True, True)
+        end_time = time.time()  # Record end time
+
+        print(f"Got response in {end_time - start_time}")
+
 
 
 def chatbot():
@@ -92,12 +127,15 @@ def chatbot():
         if user_input.lower() == "exit":
             print("Goodbye!")
             break
-        prompt = generate_prompt(user_input, index_passage_pair, 3)
+        prompt, context = generate_prompt(user_input, index_passage_pair, TOP_RETRIEVALS_TO_USE)
         print("Prompt:\n", prompt + "\n")
+        # print("Context:")
+        # for c in context:
+        #     print(c)
         ask_LLM_ollama(prompt, True)
         # ask_LLM_openai(prompt, True)
 
 
 if __name__ == "__main__":
-    # test()
-    chatbot()
+    test()
+    # chatbot()
