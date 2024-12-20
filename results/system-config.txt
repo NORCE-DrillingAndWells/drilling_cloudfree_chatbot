@@ -1,0 +1,5 @@
+Processor: Intel® Xeon(R) W-2155 CPU @ 3.30GHz × 20
+Memory: 64 GB
+GPU: GeForce 4090 (24GB)
+OS: Ubuntu 20.04.6 LTS
+
