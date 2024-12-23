@@ -4,6 +4,7 @@ Authors: Liang Zhang, Felix James Pacis, Sergey Alyaev
 
 Year: 2024
 
+**Note, this open repository is work in-progress. We plan to finish the complete instalation instructions during January 2025.**
 
 # Third party licences:
 * The `E5-small-v2` base model is distributed under the [MIT license](https://choosealicense.com/licenses/mit/).
