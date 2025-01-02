@@ -6,9 +6,7 @@ Year: 2024
 
 **Note, this open repository is work in-progress. We plan to finish the complete instalation instructions during January 2025.**
 
-## Usage instructions
-
-### Installation
+## Installation
 
 #### 1. Install Ollama 
 Install an appropriate ollama version using the download instructions: https://ollama.com/download
@@ -62,7 +60,9 @@ cd src
 pip install .
 ```
 
-#### 8. Run the chatbot
+## Usage
+
+#### Run the chatbot
 For the chatbot with small model
 ```
 python src/chatbot_demo.py chatbot --model small
