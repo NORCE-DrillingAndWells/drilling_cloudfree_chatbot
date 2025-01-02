@@ -3,6 +3,7 @@ import os, sys
 import requests, json
 import retriever
 import time
+import argparse
 
 TOP_RETRIEVALS_TO_USE = 5
 
@@ -24,11 +25,17 @@ def generate_prompt(query: str, index_passage_pair: dict, topX: int) -> str:
     return prompt, context
 
 
-def ask_LLM_ollama(prompt: str, cleanAnswer: bool = False, fixedSeed = False) -> str:
+def ask_LLM_ollama(prompt: str, cleanAnswer: bool = False, fixedSeed = False, smallModel=False) -> str:
     # Define the URL and the data payload
     url = "http://localhost:11434/api/generate"
+    model_name = "llama3.3"
+    # Check if smallModel is boolean type and true
+    if isinstance(smallModel, bool) and smallModel:
+        model_name = "llama3.1:8b"
+    elif isinstance(smallModel, str):
+        model_name = smallModel
     data = {
-        "model": "llama3.3",
+        "model": model_name,
         "prompt": prompt,
         "stream": False
         # "format": "json",
@@ -78,7 +85,7 @@ def ask_LLM_openai(prompt: str, cleanAnswer: bool = False) -> str:
     return response
 
 
-def test():
+def test(smallModel=False):
     query_list = [
         "When was well 16/10-5 abandoned?",
         "When was well 6204/10-2R abandoned?",
@@ -110,14 +117,14 @@ def test():
 
 
         start_time = time.time()  # Record start time
-        ask_LLM_ollama(prompt, True, True)
+        ask_LLM_ollama(prompt, cleanAnswer=True, fixedSeed=True, smallModel=smallModel)
         end_time = time.time()  # Record end time
 
         print(f"Got response in {end_time - start_time}")
 
 
 
-def chatbot():
+def chatbot(smallModel=False):
     print("Welcome to the CLI Chatbot! Type 'exit' to end the conversation.")
     with open(current_folder + "/index_passage_pair.json", "r") as file:
         index_passage_pair = json.load(file)
@@ -132,10 +139,25 @@ def chatbot():
         # print("Context:")
         # for c in context:
         #     print(c)
-        ask_LLM_ollama(prompt, True)
+        ask_LLM_ollama(prompt, cleanAnswer=True, fixedSeed=True, smallModel=smallModel) 
         # ask_LLM_openai(prompt, True)
 
 
 if __name__ == "__main__":
-    test()
-    # chatbot()
+    # parse the arguments and run test if test is given as the first argument
+    # the second argument can point at a small model "mosel=[model]" to be used or "model=small" to use the default small model
+    parser = argparse.ArgumentParser(description="Run the chatbot or test mode.")
+    parser.add_argument("mode", choices=["chatbot", "test"], default='chatbot', help="Mode to run the script in.", nargs="?")
+    parser.add_argument("--model", default="default", help="Specify the model to use.")
+    args = parser.parse_args()
+
+    small_model = False
+    if args.model == "small":
+        small_model = True
+    elif args.model != "default":
+        small_model = args.model
+    if args.mode == "test":
+        test(smallModel=small_model)
+    else:
+        chatbot(smallModel=small_model)
+
