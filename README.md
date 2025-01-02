@@ -24,7 +24,7 @@ For llama3.1:8b - small model, run:
 ollama run llama3.1:8b
 ```
 
-For llama3.3 - large model, run:
+For llama3.3 - large model (requires 32+ GB RAM memory), run:
 ```
 ollama run llama3.3
 ```
