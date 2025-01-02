@@ -52,6 +52,15 @@ source chatbotvenv/bin/activate
 ```
 
 #### 6. Install setuptools
+```
+pip install setuptools
+```
+
+#### 7. Install dependencies from setup.py
+```
+cd src
+pip install .
+```
 
 
 
