@@ -43,6 +43,17 @@ apt-get install git-lfs
 git lfs install
 ```
 
+#### 4. Download this code
+
+#### 5. Create  and activate a virtual enviornment
+```
+python -m venv chatbotvenv
+source chatbotvenv/bin/activate
+```
+
+#### 6. Install setuptools
+
+
 
 ## Third party licences:
 * The `E5-small-v2` base model is distributed under the [MIT license](https://choosealicense.com/licenses/mit/).
