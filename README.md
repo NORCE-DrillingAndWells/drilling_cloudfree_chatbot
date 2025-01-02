@@ -33,6 +33,11 @@ ollama run llama3.3
 
 Keep the service running in the background.
 
+#### 3. Install Git Large File Storage (LFS) to download large weights file
+
+Install Git LFS following [the instructions](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
+
+
 
 ## Third party licences:
 * The `E5-small-v2` base model is distributed under the [MIT license](https://choosealicense.com/licenses/mit/).
