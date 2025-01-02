@@ -62,6 +62,16 @@ cd src
 pip install .
 ```
 
+#### 8. Run the chatbot
+For the chatbot with small model
+```
+python src/chatbot_demo.py chatbot --model small
+```
+
+For testing with default model
+```
+python src/chatbot_demo.py test --model default
+```
 
 
 ## Third party licences:
