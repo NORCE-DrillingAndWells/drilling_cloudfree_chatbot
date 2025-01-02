@@ -37,6 +37,11 @@ Keep the service running in the background.
 
 Install Git LFS following [the instructions](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
 
+For Ubuntu linux:
+```
+apt-get install git-lfs
+git lfs install
+```
 
 
 ## Third party licences:
