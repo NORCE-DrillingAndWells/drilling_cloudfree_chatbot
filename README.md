@@ -10,9 +10,15 @@ Year: 2024
 
 ### Installation
 
-1. Install Ollama https://ollama.com/download
+#### 1. Install Ollama 
+Install an appropriate ollama version using the download instructions: https://ollama.com/download
 
-2. Download an LLM for summarization and run it as a service locally.
+For linux without admin rights, you can extract the ollama from one of [the pre-compiled releases](https://github.com/ollama/ollama/releases). In our testing, we used the [AMD64 NVIDIA version 0.5.4](https://github.com/ollama/ollama/releases/download/v0.5.4/ollama-linux-amd64.tgz).
+
+
+#### 2. Download and run an open LLM 
+
+Download an LLM for summarization and run it as a service locally.
 
 For llama3.1:8b - small model, run:
 
