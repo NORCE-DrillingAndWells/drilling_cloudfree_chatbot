@@ -48,7 +48,7 @@ Or, if you do not want to install git-lfs, you can download the weight file `ft_
 #### 4. Download this code
 
 ```
-git clone https://.../drilling_cloudfree_chatbot.git
+git clone https://github.com/NORCE-DrillingAndWells/drilling_cloudfree_chatbot.git
 ```
 
 Ensure the weight file `ft_models_v2/6config/model.safetensors` is the right one.
