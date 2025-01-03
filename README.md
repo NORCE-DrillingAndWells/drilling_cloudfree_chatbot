@@ -8,13 +8,13 @@ Year: 2024
 
 ## Installation
 
-#### 1. Install Ollama
+### 1. Install Ollama
 
 Install an appropriate ollama version using the download instructions: https://ollama.com/download
 
 For linux without admin rights, you can extract the ollama from one of [the pre-compiled releases](https://github.com/ollama/ollama/releases). In our testing, we used the [AMD64 NVIDIA version 0.5.4](https://github.com/ollama/ollama/releases/download/v0.5.4/ollama-linux-amd64.tgz).
 
-#### 2. Download and run an open LLM
+### 2. Download and run an open LLM
 
 Download an LLM for summarization and run it as a service locally.
 
@@ -32,7 +32,7 @@ ollama run llama3.3
 
 Keep the service running in the background.
 
-#### 3. Install Git Large File Storage (LFS) to download large weights file
+### 3. Install Git Large File Storage (LFS) to download large weights file
 
 Install Git LFS following [the instructions](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
 
@@ -43,19 +43,21 @@ apt-get install git-lfs
 git lfs install
 ```
 
-Or, if you do not want to install git-lfs, you can download the weight file `ft_models_v2/6config/model.safetensors` manually and put it in the right place.
+Or, if you do not want to install git-lfs, you can download the weights file `ft_models_v2/6config/model.safetensors` manually and put it in the right place.
 
-#### 4. Download this code
+### 4. Download this code
 
 ```
 git clone https://github.com/NORCE-DrillingAndWells/drilling_cloudfree_chatbot.git
 ```
 
-Ensure the weight file `ft_models_v2/6config/model.safetensors` is the right one.
+Ensure the weights file `ft_models_v2/6config/model.safetensors` is the right one.
 It can be just a placeholder if you download the code using `git clone` without installing `git-lfs`.
 In this case, download the right file manually.
 
-#### 5. Create and activate a virtual enviornment
+### 5. Create and activate a virtual enviornment
+
+If necessary, you can create an isolated virtual enviornment to avoid corrupting the versions of dependencies in your global environment.
 
 Create a virtual enviornment:
 
@@ -63,25 +65,27 @@ Create a virtual enviornment:
 python -m venv chatbotvenv
 ```
 
-To activate on Windows:
+To activate the virtual enviornment:
+
+- on Windows:
 
 ```
-chatbotvenv\Scripts\activate
+chatbotvenv\Scripts\activate.bat
 ```
 
-and on Linux and MacOS:
+- on Linux and MacOS:
 
 ```
 source chatbotvenv/bin/activate
 ```
 
-#### 6. Install setuptools
+### 6. Install setuptools
 
 ```
 pip install setuptools
 ```
 
-#### 7. Install dependencies from setup.py
+### 7. Install dependencies from setup.py
 
 ```
 cd src
@@ -90,7 +94,14 @@ pip install .
 
 ## Usage
 
-#### Run the chatbot
+### Ensure the LLM is running
+
+The chatbot communicates with a locally deployed LLM.
+If set up correctly, there should be an LLM server on `http://localhost:11434` (the default port used by ollama).
+To check the running model, run `ollama ps`.
+To start the server, for example, run `ollama run llama3.1:8b`.
+
+### Run the chatbot
 
 For the chatbot with small model
 
