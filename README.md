@@ -1,8 +1,5 @@
 # Cloud-Free Question Answering Chatbot for Drilling Applications
-
-Authors: Liang Zhang, Felix James Pacis, Sergey Alyaev
-
-Year: 2024
+The supporting code for [the paper "Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications"](#cite-as) developed by Liang Zhang, Felix James Pacis, Sergey Alyaev. 
 
 **Note, this open repository is work in-progress. We plan to finish the complete instalation instructions during January 2025.**
 
