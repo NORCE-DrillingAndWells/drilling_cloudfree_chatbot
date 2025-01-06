@@ -135,6 +135,11 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
 }
 ```
 
-## Third party licences:
+## Licences
+#### License
+
+- This code is distributed under the [open-source license which requires citing this work](LICENSE).
+
+#### Third party licences:
 
 - The `E5-small-v2` base model is distributed under the [MIT license](https://choosealicense.com/licenses/mit/).
