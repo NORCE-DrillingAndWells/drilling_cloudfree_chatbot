@@ -115,7 +115,10 @@ For testing with default model
 python src/chatbot_demo.py test --model default
 ```
 
-## Cite as:
+## Examples from the paper
+The [results](results) folder contains the answers produced by the Offline Chatbot as reported in the paper, see [Cite as](#cite-as).
+
+## Cite as
 
 Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break ??, no. 2 (2025): ??-?? https://???.
 
