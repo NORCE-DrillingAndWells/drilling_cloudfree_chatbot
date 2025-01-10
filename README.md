@@ -4,7 +4,6 @@ The supporting code for [the paper "Cloud-Free Question Answering from Internal 
 Felix James Pacis, 
 [Sergey Alyaev](https://github.com/alin256). 
 
-**Note, this open repository is work in-progress. We plan to finish the complete instalation instructions during January 2025.**
 
 ## Installation
 
