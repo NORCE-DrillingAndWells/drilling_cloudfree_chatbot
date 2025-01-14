@@ -124,7 +124,7 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
 ### Latex
 
 ```
-@article{alyaev2021probabilistic,
+@article{zhang2025cloudfree,
   title={Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications},
   author={Zhang, Liang and Pacis, Felix James and Alyaev, Sergey and Wiktorski, Tomasz},
   journal={First Break},
