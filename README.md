@@ -119,7 +119,7 @@ The [results](results) folder contains the answers produced by the Offline Chatb
 
 ## Cite as
 
-Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break ??, no. 2 (2025): ??-?? https://???.
+Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break 43, no. 2, 2025 (in press): ??-?? https://???.
 
 ### Latex
 
@@ -127,8 +127,8 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
 @article{zhang2025cloudfree,
   title={Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications},
   author={Zhang, Liang and Pacis, Felix James and Alyaev, Sergey and Wiktorski, Tomasz},
-  journal={First Break},
-  volume={??},
+  journal={First Break (in press)},
+  volume={43},
   number={2},
   pages={??--??},
   year={2025},
