@@ -119,7 +119,7 @@ The [results](results) folder contains the answers produced by the Offline Chatb
 
 ## Cite as
 
-Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break 43, no. 2, 2025 (in press): ??-?? https://???.
+Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break 43, no. 2, 2025. [URL: https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012](https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012)
 
 ### Latex
 
@@ -127,15 +127,22 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
 @article{zhang2025cloudfree,
   title={Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications},
   author={Zhang, Liang and Pacis, Felix James and Alyaev, Sergey and Wiktorski, Tomasz},
-  journal={First Break (in press)},
+  journal={First Break},
   volume={43},
   number={2},
-  pages={??--??},
   year={2025},
   publisher={European Association of Geoscientists \& Engineers},
-  doi={???}
+  url={https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012}
 }
 ```
+
+### For citing the code
+
+[Liang Zhang](https://github.com/zl6977), 
+Felix James Pacis, 
+[Sergey Alyaev](https://github.com/alin256) (2025). 
+**Cloud-Free Question Answering Chatbot for Drilling Applications**, Zenodo.
+[![DOI](https://zenodo.org/badge/911206641.svg)](https://doi.org/10.5281/zenodo.14794898)
 
 ## Licences
 #### License
