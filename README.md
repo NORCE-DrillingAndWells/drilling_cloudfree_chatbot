@@ -136,6 +136,14 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
 }
 ```
 
+### For citing the code
+
+[Liang Zhang](https://github.com/zl6977), 
+Felix James Pacis, 
+[Sergey Alyaev](https://github.com/alin256) (2025). 
+**Cloud-Free Question Answering Chatbot for Drilling Applications**, Zenodo.
+[![DOI](https://zenodo.org/badge/911206641.svg)](https://doi.org/10.5281/zenodo.14794898)
+
 ## Licences
 #### License
 
