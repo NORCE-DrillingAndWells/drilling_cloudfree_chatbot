@@ -119,7 +119,7 @@ The [results](results) folder contains the answers produced by the Offline Chatb
 
 ## Cite as
 
-Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break 43, no. 2, 2025. [DOI: 10.3997/1365-2397.fb2025012](https://doi.org/10.3997/1365-2397.fb2025012)
+Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Question Answering from Internal Knowledge Bases: Building an AI for Drilling Applications."** First Break 43, no. 2, 2025. [URL: https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012](https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012)
 
 ### Latex
 
@@ -132,7 +132,7 @@ Liang Zhang, Felix James Pacis, Sergey Alyaev, Tomasz Wiktorski. **"Cloud-Free Q
   number={2},
   year={2025},
   publisher={European Association of Geoscientists \& Engineers},
-  doi={https://doi.org/10.3997/1365-2397.fb2025012}
+  url={https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2025012}
 }
 ```
 
